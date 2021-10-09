@@ -35,26 +35,7 @@ function Main() {
         ]}
       ></Header>
       <main>
-        <TodoList
-          todos={[
-            {
-              title: "할 일 0",
-              id: 0,
-            },
-            {
-              title: "할 일 1",
-              id: 1,
-            },
-            {
-              title: "할 일 2",
-              id: 2,
-            },
-            {
-              title: "할 일 3",
-              id: 3,
-            },
-          ]}
-        ></TodoList>
+        <TodoList></TodoList>
       </main>
     </div>
   );
