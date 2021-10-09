@@ -1,16 +1,14 @@
 import { IconBtn } from "../../molecules";
 import { check, close } from "../../../assets/icons";
-import { deleteUserTodo, updateUserTodo } from "../../../apis/user";
+
 import "./index.scss";
 
-function TodoItem({ content, onItemChange, id }) {
+function TodoItem({ content, onItemDelete, onItemChange, id }) {
   const onDeleteBtnClick = () => {
-    deleteUserTodo(id);
-    onItemChange(id);
+    onItemDelete(id);
   };
 
   const onFinishBtnClick = () => {
-    updateUserTodo(id, content, 1);
     onItemChange(id);
   };
 
