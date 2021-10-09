@@ -1,7 +1,7 @@
-import route from "../commons/constants/route";
+import route from "../../commons/constants/route";
 
 const getTodos = async () => {
-  const rawResult = await fetch(`${route.SERVER_URL}/users/my/todos`, {
+  const rawResult = await fetch(`${route.SERVER_URL}/api/users/my/todos`, {
     method: "get",
     headers: {
       Accept: "application/json",
