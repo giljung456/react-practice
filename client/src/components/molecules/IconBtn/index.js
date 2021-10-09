@@ -1,9 +1,9 @@
-import { Btn, Icon } from "../../atoms";
+import { Btn, Img } from "../../atoms";
 
 function IconBtn({ btnProps, iconProps }) {
   return (
     <Btn {...btnProps}>
-      <Icon {...iconProps}></Icon>
+      <Img {...iconProps}></Img>
     </Btn>
   );
 }

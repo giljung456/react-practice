@@ -1,2 +1,2 @@
 export { default as Btn } from "./Btn";
-export { default as Icon } from "./Img";
+export { default as Img } from "./Img";
