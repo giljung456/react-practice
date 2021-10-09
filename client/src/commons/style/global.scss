@@ -1,0 +1,15 @@
+@import "./reset.scss";
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+body {
+  font-family: "Noto Sans KR";
+  height: 100vh;
+}
+
+label {
+  display: block;
+}
