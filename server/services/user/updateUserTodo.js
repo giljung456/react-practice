@@ -4,7 +4,7 @@ const updateUserTodos = (todoId, content, isFinished) => {
   const targetIdx = todos.findIndex((todo) => todo.id === todoId);
   todos[targetIdx] = {
     content,
-    isFinished,
+    isFinished: isFinished ? true : false,
     id: todoId,
   };
 };
