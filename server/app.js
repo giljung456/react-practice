@@ -6,11 +6,14 @@ import cors from "cors";
 import session from "express-session";
 import sessionStore from "session-file-store";
 import apiRouter from "./routes/index.js";
+import db from "./models/index.js";
 
 const __dirname = path.resolve();
 const app = express();
 const SessionStore = sessionStore(session);
 const port = process.env.PORT || 9000;
+const sequelize = db.sequelize;
+sequelize.sync();
 
 app.use(cors());
 app.use(logger("dev"));
