@@ -30,3 +30,10 @@ export const todos = [
     id: 5,
   },
 ];
+
+export const users = [
+  {
+    accessToken: "abcd",
+    name: "giljung",
+  },
+];
