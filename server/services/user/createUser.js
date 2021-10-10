@@ -1,7 +1,7 @@
 import db from "../../models/index.js";
 
-const createUser = async (accessToken, name) => {
-  await db.user.create({ accessToken, name });
+const createUser = async ({ id, password, accessToken, nickname, profileURL }) => {
+  await db.user.create({ id, password, accessToken, nickname, profileURL });
 };
 
 export default createUser;

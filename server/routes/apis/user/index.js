@@ -2,6 +2,7 @@ import express from "express";
 import * as controller from "./controllers/index.js";
 const router = express.Router();
 
+router.post("/", controller.createUser);
 router.get("/my/todos", controller.getUserTodos);
 router.post("/my/todos", controller.createUserTodo);
 router.delete("/my/todos/:todoId", controller.deleteUserTodo);
