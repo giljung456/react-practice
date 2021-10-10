@@ -1,7 +1,7 @@
-import { users } from "../../models/dummy.js";
+import db from "../../models/index.js";
 
-const createUser = (accessToken, name) => {
-  users.push({ accessToken, name });
+const createUser = async (accessToken, name) => {
+  await db.user.create({ accessToken, name });
 };
 
 export default createUser;
