@@ -2,12 +2,25 @@ export default (sequelize, DataTypes) => {
   return sequelize.define(
     "user",
     {
-      accessToken: {
-        type: DataTypes.STRING(100),
+      id: {
+        type: DataTypes.STRING(45),
         primaryKey: true,
       },
-      name: {
+      password: {
         type: DataTypes.STRING(45),
+        allowNull: false,
+      },
+
+      accessToken: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+      },
+      nickname: {
+        type: DataTypes.STRING(45),
+        allowNull: false,
+      },
+      profileURL: {
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
     },

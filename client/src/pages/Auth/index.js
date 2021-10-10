@@ -1,6 +1,6 @@
 import { useLocation, useHistory } from "react-router-dom";
 import { useEffect } from "react";
-import { login } from "../../apis/auth";
+import { githubAuth } from "../../apis/auth";
 import route from "../../commons/constants/route";
 
 function Auth() {
@@ -9,12 +9,16 @@ function Auth() {
   const code = searchParams.get("code");
   useEffect(() => {
     const fetchUserInfo = async () => {
-      await login(code);
-      history.push(route.MAIN);
+      const { accessToken, nickname, profileURL } = await githubAuth(code);
+      window.localStorage.setItem("accessToken", accessToken);
+      window.localStorage.setItem("nickname", nickname);
+      window.localStorage.setItem("profileURL", profileURL);
+      history.push(route.REGISTER);
+      window.alert("추가 정보를 입력해주세요.");
     };
 
     fetchUserInfo();
-  }, []);
+  }, [code, history]);
 
   return <div></div>;
 }

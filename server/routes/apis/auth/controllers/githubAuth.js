@@ -1,6 +1,4 @@
 import axios from "axios";
-import { getUser, createUser } from "../../../../services/user/index.js";
-import { createSession } from "../../../../services/session/index.js";
 
 export default async (req, res) => {
   const { code } = req.body;
@@ -17,14 +15,7 @@ export default async (req, res) => {
       Authorization: `token ${accessToken}`,
     },
   });
-  const { name } = userInformation;
+  const { name: nickname, avatar_url: profileURL } = userInformation;
 
-  const user = getUser(accessToken);
-  if (!user) {
-    createUser(accessToken, name);
-  }
-
-  createSession(req.session, accessToken);
-  res.cookie("name", name);
-  res.status(201).end();
+  res.status(201).json({ accessToken, nickname, profileURL });
 };
