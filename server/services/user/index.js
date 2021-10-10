@@ -2,3 +2,5 @@ export { default as createUserTodo } from "./createUserTodo.js";
 export { default as deleteUserTodo } from "./deleteUserTodo.js";
 export { default as updateUserTodo } from "./updateUserTodo.js";
 export { default as getUserTodos } from "./getUserTodos.js";
+export { default as getUser } from "./getUser.js";
+export { default as createUser } from "./createUser.js";
